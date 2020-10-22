@@ -22,7 +22,7 @@ crazyflieTypes:
         kd_z: 0.4
         ki_z: 0.05
         i_range_z: 0.4
-        mass: 0.032
+        mass: 0.029
         massThrust: 132000
   defaultSingleMarker:
     bigQuad: False
@@ -137,13 +137,12 @@ crazyflieTypes:
 numMarkerConfigurations: 4
 markerConfigurations:
   "0":  # for standard Crazyflie
-    numPoints: 4
-    offset: [0.0, -0.01, -0.04]
+    numPoints: 3
+    offset: [0.0, 0.0, 0.0]
     points:
-      "0": [0.0177184,0.0139654,0.0557585]
-      "1": [-0.0262914,0.0509139,0.0402475]
-      "2": [-0.0328889,-0.02757,0.0390601]
-      "3": [0.0431307,-0.0331216,0.0388839]
+      "0": [0.0236039,0.0122819,0.0162808]
+      "1": [0.0263228,-0.0287031,0.0164752]
+      "2": [-0.0294733,-0.0524553,0.0102552]
   "1": # medium frame
     numPoints: 4
     offset: [0.0, 0.0, -0.03]

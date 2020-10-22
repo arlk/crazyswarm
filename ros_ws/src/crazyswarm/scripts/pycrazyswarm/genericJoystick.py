@@ -53,12 +53,36 @@ class Joystick:
     # def clearButtonPressed(self):
     #     self.buttonWasPressed = False
 
+    def checkIfNumButtonIsPressed(self,k):
+        if self.hasJoystick:
+            state = self.js.read(0)
+            return state[1][k] == 1
+        else:
+            return False
+
     def checkIfButtonIsPressed(self):
         if self.hasJoystick:
             state = self.js.read(0)
             return state[1][5] == 1
         else:
             return False
+
+    def waitUntilNumButtonPressed(self,k):
+        if self.hasJoystick:
+            while not self.checkIfNumButtonIsPressed(k):
+                self.timeHelper.sleep(0.01)
+            while self.checkIfNumButtonIsPressed(k):
+                self.timeHelper.sleep(0.01)
+        else:
+            print("Warning: No Joystick Connected!")
+            with keyboard.KeyPoller() as keyPoller:
+                # Wait until a key is pressed.
+                while keyPoller.poll() is None:
+                    self.timeHelper.sleep(0.01)
+                # Wait until the key is released.
+                while keyPoller.poll() is not None:
+                    self.timeHelper.sleep(0.01)
+
 
     def waitUntilButtonPressed(self):
         if self.hasJoystick:

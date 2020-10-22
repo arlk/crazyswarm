@@ -10,18 +10,38 @@
 #include <crazyflie_driver/Takeoff.h>
 #include <crazyflie_driver/Land.h>
 
-namespace Xbox360Buttons {
+namespace SaitekButtons {
 
     enum {
-        Green  = 0,
-        Red    = 1,
-        Blue   = 2,
-        Yellow = 3,
-        LB     = 4,
-        RB     = 5,
-        Back   = 6,
-        Start  = 7,
-        COUNT  = 8,
+        Pink1,
+        Pink2,
+        Pink3,
+        Orange4,
+        Orange5,
+        Pink6,
+        Pink7,
+        Pink8,
+        Orange9,
+        Orange10,
+        Yellow11,
+        Yellow12,
+        Yellow13,
+        Yellow14,
+        Yellow15,
+        Yellow16,
+        Blue17,
+        Blue18,
+        Green19,
+        Green20,
+        Gray21,
+        Black22,
+        Black23,
+        Black24,
+        Scroll,
+        ScrollUp,
+        ScrollDn,
+        Red,
+        COUNT,
     };
 
 }
@@ -59,18 +79,18 @@ private:
     void joyChanged(
         const sensor_msgs::Joy::ConstPtr& msg)
     {
-        static std::vector<int> lastButtonState(Xbox360Buttons::COUNT);
+        static std::vector<int> lastButtonState(SaitekButtons::COUNT);
 
-        if (msg->buttons.size() >= Xbox360Buttons::COUNT
-            && lastButtonState.size() >= Xbox360Buttons::COUNT)
+        if (msg->buttons.size() >= SaitekButtons::COUNT
+            && lastButtonState.size() >= SaitekButtons::COUNT)
         {
-            if (msg->buttons[Xbox360Buttons::Red] == 1 && lastButtonState[Xbox360Buttons::Red] == 0) {
+            if (msg->buttons[SaitekButtons::Red] == 1 && lastButtonState[SaitekButtons::Red] == 0) {
                 emergency();
             }
-            if (msg->buttons[Xbox360Buttons::Start] == 1 && lastButtonState[Xbox360Buttons::Start] == 0) {
+            if (msg->buttons[SaitekButtons::Black22] == 1 && lastButtonState[SaitekButtons::Black22] == 0) {
                 takeoff();
             }
-            if (msg->buttons[Xbox360Buttons::Back] == 1 && lastButtonState[Xbox360Buttons::Back] == 0) {
+            if (msg->buttons[SaitekButtons::Black23] == 1 && lastButtonState[SaitekButtons::Black23] == 0) {
                 land();
             }
         }
@@ -90,7 +110,7 @@ private:
     {
         crazyflie_driver::Takeoff srv;
         srv.request.groupMask = 0;
-        srv.request.height = 0.5;
+        srv.request.height = 1.0;
         srv.request.duration = ros::Duration(2.0);
         m_serviceTakeoff.call(srv);
     }

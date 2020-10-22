@@ -11,7 +11,7 @@
       # Logging configuration (Use enable_logging to actually enable logging)
       genericLogTopics: ["log1"]
       genericLogTopicFrequencies: [10]
-      genericLogTopic_log1_Variables: ["stateEstimate.x", "ctrltarget.x"]
+      genericLogTopic_log1_Variables: ["stateEstimate.x", "stateEstimate.y", "stateEstimate.z"]
       # firmware parameters for all drones (use crazyflieTypes.yaml to set per type, or
       # allCrazyflies.yaml to set per drone)
       firmwareParams:
@@ -35,7 +35,7 @@
       motion_capture_type: "vicon" # one of none,vicon,optitrack,qualisys,vrpn
       object_tracking_type: "libobjecttracker" # one of motionCapture,libobjecttracker
       send_position_only: False # set to False to send position+orientation; set to True to send position only
-      vicon_host_name: "vicon"
+      vicon_host_name: "192.168.1.2"
       # optitrack_host_name: "optitrack"
       # qualisys_host_name: "10.0.5.219"
       # qualisys_base_port: 22222
@@ -45,7 +45,7 @@
       write_csvs: False
       force_no_cache: False
       enable_parameters: True
-      enable_logging: False
+      enable_logging: True
     </rosparam>
   </node>
 

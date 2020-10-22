@@ -10,14 +10,17 @@ if __name__ == "__main__":
     timeHelper = swarm.timeHelper
     allcfs = swarm.allcfs
 
+    print("press button 1 to takeoff...")
+    swarm.input.waitUntilNumButtonPressed(0)
+
     allcfs.takeoff(targetHeight=Z, duration=1.0+Z)
     timeHelper.sleep(1.5+Z)
     for cf in allcfs.crazyflies:
         pos = np.array(cf.initialPosition) + np.array([0, 0, Z])
         cf.goTo(pos, 0, 1.0)
 
-    print("press button to continue...")
-    swarm.input.waitUntilButtonPressed()
+    print("press button 2 to land...")
+    swarm.input.waitUntilNumButtonPressed(1)
 
     allcfs.land(targetHeight=0.02, duration=1.0+Z)
     timeHelper.sleep(1.0+Z)
