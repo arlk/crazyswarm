@@ -24,7 +24,7 @@ make BLE=0
 cd $ROOT
 
 # build stm firmware
-cd crazyflie-firmware
+cd crazyflie-l1
 git submodule init
 git submodule update
 make -j8
