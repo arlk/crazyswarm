@@ -1,7 +1,7 @@
-[submodule "crazyflie-firmware"]
-	path = crazyflie-firmware
-	url = https://github.com/bitcraze/crazyflie-firmware.git
-	branch = master
+[submodule "crazyflie-l1"]
+	path = crazyflie-l1
+	url = git@github.com:arlk/crazyflie-l1.git
+	branch = l1
 [submodule "crazyflie-lib-python"]
 	path = crazyflie-lib-python
 	url = https://github.com/bitcraze/crazyflie-lib-python.git
