@@ -43,7 +43,14 @@ crazyflieTypes:
         kd_z: 0.4
         mass: 0.029
         massThrust: 132000
-        l1on : 2
+        Am_v : 800
+        Am_w : 200
+        A_v : 0.941765
+        B_v : 0.25
+        C_v : 0.232942
+        A_w : 0.941765
+        B_w : 0.25
+        C_w : 0.232942
   defaultSingleMarker:
     bigQuad: False
     batteryVoltageWarning: 3.8  # V
