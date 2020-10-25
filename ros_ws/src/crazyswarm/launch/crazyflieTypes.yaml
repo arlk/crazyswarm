@@ -31,7 +31,7 @@ crazyflieTypes:
     markerConfiguration: 0 # change to 3 for single marker tracking
     dynamicsConfiguration: 0
     firmwareParams:
-      ctrlL1:
+      ctrlGeom:
         kp_xy: 0.4 #0.6 # p for position
         kd_xy: 0.2 # 0.35 # d for position
         kR_xy: 70000 # p for attitude
@@ -43,14 +43,13 @@ crazyflieTypes:
         kd_z: 0.4
         mass: 0.029
         massThrust: 132000
-        Am_v : 800
-        Am_w : 200
-        A_v : 0.941765
-        B_v : 0.25
-        C_v : 0.232942
-        A_w : 0.941765
-        B_w : 0.25
-        C_w : 0.232942
+      ctrlL1:
+        Am_v : -920
+        Am_w : -909
+        A_v : 0.9512
+        C_v : 0.1951
+        A_w : 0.9512
+        C_w : 0.1951
   defaultSingleMarker:
     bigQuad: False
     batteryVoltageWarning: 3.8  # V
