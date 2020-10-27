@@ -57,7 +57,7 @@ if __name__ == "__main__":
         count = 0
         cost = 0.0
         for row in reader:
-            cost += float(row[0]) + float(row[1])
+            cost += float(row[0]) + 0.5*float(row[1]) + float(row[2])
             count += 1
 
-    print("Cost: ", cost/count)
+    print("Cost: ", 100*cost/count)

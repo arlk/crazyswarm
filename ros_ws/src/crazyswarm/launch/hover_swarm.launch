@@ -11,7 +11,7 @@
       # Logging configuration (Use enable_logging to actually enable logging)
       genericLogTopics: ["log1"]
       genericLogTopicFrequencies: [10]
-      genericLogTopic_log1_Variables: ["ctrlErr.r", "ctrlErr.v", "ctrlErr.R", "ctrlErr.w"]
+      genericLogTopic_log1_Variables: ["ctrlErr.p", "ctrlErr.v", "ctrlErr.r", "ctrlErr.w"]
       # firmware parameters for all drones (use crazyflieTypes.yaml to set per type, or
       # allCrazyflies.yaml to set per drone)
       firmwareParams:

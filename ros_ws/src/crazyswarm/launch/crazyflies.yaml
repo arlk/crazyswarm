@@ -2,4 +2,4 @@ crazyflies:
 - channel: 80
   id: 1
   initialPosition: [0.0, 0.0, 0.0]
-  type: defaultL1
+  type: defaultL1OFF

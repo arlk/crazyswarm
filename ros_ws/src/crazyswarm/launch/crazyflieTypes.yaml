@@ -24,7 +24,7 @@ crazyflieTypes:
         i_range_z: 0.4
         mass: 0.029
         massThrust: 132000
-  defaultL1:
+  defaultL1ON:
     bigQuad: False
     batteryVoltageWarning: 3.8  # V
     batteryVoltateCritical: 3.7 # V
@@ -41,15 +41,42 @@ crazyflieTypes:
         kd_omega_rp: 200 # roll and pitch angular velocity d gain
         kp_z: 1.25
         kd_z: 0.4
-        mass: 0.029
+        mass: 0.028
         massThrust: 132000
       ctrlL1:
-        Am_v : -920
-        Am_w : -909
-        A_v : 0.9512
-        C_v : 0.1951
-        A_w : 0.9512
-        C_w : 0.1951
+        Am_v : -550
+        Am_w : -350
+        A_v : 0.95123
+        C_v : 0.0487706
+        A_w : 0.95123
+        C_w : 0.0487706
+  defaultL1OFF:
+    bigQuad: False
+    batteryVoltageWarning: 3.8  # V
+    batteryVoltateCritical: 3.7 # V
+    markerConfiguration: 0 # change to 3 for single marker tracking
+    dynamicsConfiguration: 0
+    firmwareParams:
+      ctrlGeom:
+        kp_xy: 0.4 #0.6 # p for position
+        kd_xy: 0.2 # 0.35 # d for position
+        kR_xy: 70000 # p for attitude
+        kw_xy: 20000 # d for attitude
+        kR_z: 60000 # 70000 # p for yaw
+        kw_z: 12000 # 30000  # d for yaw
+        kd_omega_rp: 200 # roll and pitch angular velocity d gain
+        kp_z: 1.25
+        kd_z: 0.4
+        mass: 0.028
+        massThrust: 132000
+      ctrlL1:
+        l1on : 0
+        Am_v : -550
+        Am_w : -350
+        A_v : 0.95123
+        C_v : 0.0487706
+        A_w : 0.95123
+        C_w : 0.0487706
   defaultSingleMarker:
     bigQuad: False
     batteryVoltageWarning: 3.8  # V
