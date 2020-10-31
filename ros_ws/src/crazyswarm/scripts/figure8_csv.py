@@ -28,8 +28,8 @@ if __name__ == "__main__":
 
         allcfs.startTrajectory(0, timescale=TIMESCALE)
         timeHelper.sleep(traj1.duration * TIMESCALE + 2.0)
-        allcfs.startTrajectory(0, timescale=TIMESCALE, reverse=True)
-        timeHelper.sleep(traj1.duration * TIMESCALE + 2.0)
+        allcfs.startTrajectory(0, timescale=TIMESCALE * 0.5 , reverse=True)
+        timeHelper.sleep(traj1.duration * TIMESCALE * 0.5 + 2.0)
 
         allcfs.land(targetHeight=0.06, duration=2.0)
         timeHelper.sleep(3.0)

@@ -3,7 +3,7 @@ crazyflieTypes:
     bigQuad: False
     batteryVoltageWarning: 3.8  # V
     batteryVoltateCritical: 3.7 # V
-    markerConfiguration: 0 # change to 3 for single marker tracking
+    markerConfiguration: 1 # change to 3 for single marker tracking
     dynamicsConfiguration: 0
     firmwareParams:
       ctrlMel:
@@ -22,13 +22,13 @@ crazyflieTypes:
         kd_z: 0.4
         ki_z: 0.05
         i_range_z: 0.4
-        mass: 0.029
+        mass: 0.032
         massThrust: 132000
   defaultL1ON:
     bigQuad: False
     batteryVoltageWarning: 3.8  # V
     batteryVoltateCritical: 3.7 # V
-    markerConfiguration: 0 # change to 3 for single marker tracking
+    markerConfiguration: 1 # change to 3 for single marker tracking
     dynamicsConfiguration: 0
     firmwareParams:
       ctrlGeom:
@@ -41,20 +41,19 @@ crazyflieTypes:
         kd_omega_rp: 200 # roll and pitch angular velocity d gain
         kp_z: 1.25
         kd_z: 0.4
-        mass: 0.028
+        mass: 0.032
         massThrust: 132000
       ctrlL1:
-        Am_v : -550
-        Am_w : -350
-        A_v : 0.95123
-        C_v : 0.0487706
-        A_w : 0.95123
-        C_w : 0.0487706
+        l1on : 1
+        Am_v : -700
+        Am_w : -300
+        w_v : 25
+        w_w : 25
   defaultL1OFF:
     bigQuad: False
     batteryVoltageWarning: 3.8  # V
     batteryVoltateCritical: 3.7 # V
-    markerConfiguration: 0 # change to 3 for single marker tracking
+    markerConfiguration: 1 # change to 3 for single marker tracking
     dynamicsConfiguration: 0
     firmwareParams:
       ctrlGeom:
@@ -67,16 +66,10 @@ crazyflieTypes:
         kd_omega_rp: 200 # roll and pitch angular velocity d gain
         kp_z: 1.25
         kd_z: 0.4
-        mass: 0.028
+        mass: 0.032
         massThrust: 132000
       ctrlL1:
         l1on : 0
-        Am_v : -550
-        Am_w : -350
-        A_v : 0.95123
-        C_v : 0.0487706
-        A_w : 0.95123
-        C_w : 0.0487706
   defaultSingleMarker:
     bigQuad: False
     batteryVoltageWarning: 3.8  # V
@@ -196,7 +189,15 @@ markerConfigurations:
       "0": [0.0236039,0.0122819,0.0162808]
       "1": [0.0263228,-0.0287031,0.0164752]
       "2": [-0.0294733,-0.0524553,0.0102552]
-  "1": # medium frame
+  "1":  # for mocap deck
+    numPoints: 4
+    offset: [0.0, 0.0, -0.0225]
+    points:
+      "0": [-0.0225933,0.0036417,0.023152]
+      "1": [0.0171722,0.00523897,0.0243789]
+      "2": [-0.00657596,0.0174726,0.0238842]
+      "3": [0.0081016,-0.0151342,0.0228102]
+  "2": # medium frame
     numPoints: 4
     offset: [0.0, 0.0, -0.03]
     points:
@@ -204,7 +205,7 @@ markerConfigurations:
       "1": [-0.0156318,0.0997402,0.0508162]
       "2": [0.0461693,-0.0881012,0.0380672]
       "3": [-0.0789959,-0.0269793,0.0461144]
-  "2": # big frame
+  "3": # big frame
     numPoints: 4
     offset: [0.0, 0.0, -0.06]
     points:
@@ -212,7 +213,7 @@ markerConfigurations:
       "1": [-0.0113941,0.00945842,0.0984811]
       "2": [-0.0306277,0.0514879,0.0520456]
       "3": [0.0535816,-0.0400775,0.0432799]
-  "3":  # for standard Crazyflie with a single marker
+  "4":  # for standard Crazyflie with a single marker
     numPoints: 1
     offset: [0.0, -0.01, -0.04]
     points:

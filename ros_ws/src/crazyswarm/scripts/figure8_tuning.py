@@ -28,23 +28,19 @@ if __name__ == "__main__":
         for k in params:
             cf.setParam("ctrlL1/" + k, params[k])
 
-    rospy.Subscriber("/cf1/log1", GenericLogData, callback)
+    rospy.Subscriber("/cf3/log1", GenericLogData, callback)
 
-    traj1 = uav_trajectory.Trajectory()
-    traj1.loadcsv("figure8.csv")
-
-    for cf in allcfs.crazyflies:
-        cf.uploadTrajectory(0, 0, traj1)
+    #  traj1 = uav_trajectory.Trajectory()
+    #  traj1.loadcsv("figure8.csv")
+    #
+    #  for cf in allcfs.crazyflies:
+    #      cf.uploadTrajectory(0, 0, traj1)
 
     allcfs.takeoff(targetHeight=1.0, duration=2.0)
-    timeHelper.sleep(2.5)
-    for cf in allcfs.crazyflies:
-        pos = np.array(cf.initialPosition) + np.array([0, 0, 1.0])
-        cf.goTo(pos, 0, 2.0)
-    timeHelper.sleep(2.5)
-
-    allcfs.startTrajectory(0, timescale=1.0)
-    timeHelper.sleep(traj1.duration * 1.0 + 2.0)
+    timeHelper.sleep(10.0)
+    #
+    #  allcfs.startTrajectory(0, timescale=1.0)
+    #  timeHelper.sleep(traj1.duration * 1.0 + 2.0)
     #  allcfs.startTrajectory(0, timescale=0.75, reverse=True)
     #  timeHelper.sleep(traj1.duration * 0.75 + 2.0)
 
@@ -57,7 +53,7 @@ if __name__ == "__main__":
         count = 0
         cost = 0.0
         for row in reader:
-            cost += float(row[0]) + 0.5*float(row[1]) + float(row[2])
+            cost += float(row[0])
             count += 1
 
     print("Cost: ", 100*cost/count)
