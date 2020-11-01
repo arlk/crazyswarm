@@ -46,9 +46,11 @@ crazyflieTypes:
       ctrlL1:
         l1on : 1
         Am_v : -700
-        Am_w : -700
+        Am_rp : -700
+        Am_yaw : -700
         w_v : 25
-        w_w : 45
+        w_rp : 45
+        w_yaw : 45
   defaultL1OFF:
     bigQuad: False
     batteryVoltageWarning: 3.8  # V
