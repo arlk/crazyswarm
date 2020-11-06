@@ -26,7 +26,10 @@ if __name__ == "__main__":
     params = load(file('log.yaml', 'rb'), Loader=Loader)
     for cf in allcfs.crazyflies:
         for k in params:
-            cf.setParam("ctrlL1/" + k, params[k])
+            if k == 'kR_xy':
+                cf.setParam("ctrlGeom/" + k, params[k])
+            else:
+                cf.setParam("ctrlL1/" + k, params[k])
 
     rospy.Subscriber("/cf3/log1", GenericLogData, callback)
 
@@ -36,7 +39,7 @@ if __name__ == "__main__":
     #  for cf in allcfs.crazyflies:
     #      cf.uploadTrajectory(0, 0, traj1)
 
-    allcfs.takeoff(targetHeight=1.0, duration=2.0)
+    allcfs.takeoff(targetHeight=0.75, duration=2.0)
     timeHelper.sleep(10.0)
     #
     #  allcfs.startTrajectory(0, timescale=1.0)

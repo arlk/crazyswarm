@@ -45,12 +45,15 @@ crazyflieTypes:
         massThrust: 132000
       ctrlL1:
         l1on : 1
-        Am_v : -700
-        Am_rp : -700
-        Am_yaw : -700
+        Am_v : -20
+        Am_rp : -20
+        Am_yaw : -20
+        kl_v : 20
+        kl_rp : 20
+        kl_yaw : 20
         w_v : 25
         w_rp : 45
-        w_yaw : 45
+        w_yaw : 15
   defaultL1OFF:
     bigQuad: False
     batteryVoltageWarning: 3.8  # V
